@@ -1,0 +1,13 @@
+---
+- name: site
+  hosts: baremetal
+  gather_facts: false
+  become: true
+
+  tasks:
+    - name: Read some config file
+      debug: var=item
+      with_file:
+        - "/etc/hosts"
+        - "/etc/passwd"
+
