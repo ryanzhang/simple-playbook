@@ -8,6 +8,9 @@
     - name: " List all variables"
       debug:
         var: hostvars[inventory_hostname]
+    - name: " List extra variable"
+      debug:
+        var: backend_inventory_rest_api        
     - name: Read some config file
       debug: var=item
       with_file:
