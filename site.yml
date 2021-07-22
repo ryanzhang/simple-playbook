@@ -1,10 +1,13 @@
 ---
 - name: all
   hosts: all
-  gather_facts: true
+  gather_facts: false
   become: true
 
   tasks:
+    - name: " List all variables"
+      debug:
+        var: hostvars[inventory_hostname]
     - name: Read some config file
       debug: var=item
       with_file:
